@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7f6d829-26f4-4e48-b8cc-83b753f36645" name="Changes" comment="" />
+    <list default="true" id="c7f6d829-26f4-4e48-b8cc-83b753f36645" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +35,7 @@
   }
 }]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
+  "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="3DAx3vloYRG6w1SXw00qL4Gjnxf" />
   <component name="ProjectViewState">
@@ -70,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1777738480036</updated>
-      <workItem from="1777738481142" duration="6586000" />
+      <workItem from="1777738481142" duration="6923000" />
     </task>
     <servers />
   </component>
