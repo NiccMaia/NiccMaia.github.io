@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curriculum Vitae | Nicolle Maia</title>
+    <title>Portfólio & Currículo | Nicolle Maia</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
 
     <style>
         :root {
@@ -110,8 +116,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: "Playfair Display", serif;
+            font-size: 3.4rem;
+            color: var(--dark-lilac);
+            letter-spacing: -0.08em;
             overflow: hidden;
         }
+
         .avatar img {
             width: 100%;
             height: 100%;
@@ -119,6 +130,7 @@
             object-position: center;
             border-radius: 50%;
         }
+
         .name {
             font-size: 1.85rem;
             line-height: 1.05;
@@ -385,16 +397,31 @@
 
         @media (max-width: 900px) {
             body {
-                padding: 16px;
+                padding: 0;
+                background: #fffafc;
             }
 
             .cv-page {
+                width: 100%;
+                min-height: 100vh;
                 grid-template-columns: 1fr;
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
             }
 
             .sidebar,
             .main-content {
-                padding: 32px 24px;
+                padding: 30px 22px;
+            }
+
+            .sidebar {
+                order: 1;
+                border-radius: 0 0 28px 28px;
+            }
+
+            .main-content {
+                order: 2;
             }
 
             .cv-page::before {
@@ -403,6 +430,50 @@
 
             .tech-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .avatar {
+                width: 130px;
+                height: 130px;
+            }
+
+            .name {
+                font-size: 1.55rem;
+            }
+
+            .role {
+                font-size: 0.76rem;
+            }
+
+            .top-label {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 24px;
+                font-size: 0.78rem;
+            }
+
+            .section-title,
+            .side-title {
+                font-size: 0.95rem;
+            }
+
+            .timeline {
+                padding-left: 28px;
+            }
+
+            .timeline::before {
+                left: 9px;
+            }
+
+            .item::before {
+                left: -25px;
+            }
+
+            .print-button {
+                width: 44px;
+                height: 44px;
+                right: 16px;
+                bottom: 16px;
             }
         }
 
@@ -451,23 +522,49 @@
     <aside class="sidebar">
         <section class="profile-card">
             <div class="avatar">
-                <img src="minha-foto.jpg" alt="Foto de Nicolle Maia" />
+                <img src="./minha-foto.jpg" alt="Foto de Nicolle Maia" />
             </div>
+
             <h1 class="name">Nicolle<br />Luisa Maia</h1>
             <p class="role">Full Stack em formação</p>
+
             <p class="mini-about">
-                Estudante de Ciência da Computação com interesse em desenvolvimento full stack, criação de soluções digitais e tecnologia aplicada a produto.
+                Estudante de Ciência da Computação com interesse em desenvolvimento full stack,
+                criação de soluções digitais e tecnologia aplicada a produto.
             </p>
         </section>
 
         <section class="side-section">
             <h2 class="side-title">Contato</h2>
             <ul class="contact-list">
-                <li><i class="fas fa-envelope"></i><a href="mailto:nicolleluisamaiagurgel@gmail.com">nicolleluisamaiagurgel@gmail.com</a></li>
-                <li><i class="fab fa-github"></i><a href="https://github.com/NiccMaia" target="_blank">github.com/NiccMaia</a></li>
-                <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/nicolle-maia-64550a3b0/" target="_blank">linkedin.com/in/nicolle-maia</a></li>
-                <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/5585992925040" target="_blank">+55 (85) 99292-5040</a></li>
-                <li><i class="fas fa-map-marker-alt"></i><span>Fortaleza, Ceará, Brasil</span></li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:nicolleluisamaiagurgel@gmail.com">
+                        nicolleluisamaiagurgel@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/NiccMaia" target="_blank">
+                        github.com/NiccMaia
+                    </a>
+                </li>
+                <li>
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/nicolle-maia" target="_blank">
+                        linkedin.com/in/nicolle-maia
+                    </a>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/5585992925040" target="_blank">
+                        +55 (85) 99292-5040
+                    </a>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Fortaleza, Ceará, Brasil</span>
+                </li>
             </ul>
         </section>
 
@@ -494,18 +591,36 @@
         <section class="side-section">
             <h2 class="side-title">Idiomas</h2>
             <ul class="language-list">
-                <li><strong>Português</strong><span class="muted">Nativo</span></li>
-                <li><strong>Espanhol</strong><span class="muted">Intermediário</span></li>
-                <li><strong>Inglês</strong><span class="muted">Iniciante</span></li>
+                <li>
+                    <strong>Português</strong>
+                    <span class="muted">Nativo</span>
+                </li>
+                <li>
+                    <strong>Espanhol</strong>
+                    <span class="muted">Intermediário</span>
+                </li>
+                <li>
+                    <strong>Inglês</strong>
+                    <span class="muted">Iniciante</span>
+                </li>
             </ul>
         </section>
 
         <section class="side-section">
             <h2 class="side-title">Educação</h2>
             <ul class="education-list">
-                <li><strong>Ciência da Computação</strong><span class="muted">UNIFOR | 2º semestre</span></li>
-                <li><strong>Sistemas de Informação</strong><span class="muted">UNI7 | até o 4º semestre</span></li>
-                <li><strong>Formação Full Stack</strong><span class="muted">Digital College | conclusão prevista: jun/2026</span></li>
+                <li>
+                    <strong>Ciência da Computação</strong>
+                    <span class="muted">UNIFOR | 2º semestre</span>
+                </li>
+                <li>
+                    <strong>Sistemas de Informação</strong>
+                    <span class="muted">UNI7 | até o 4º semestre</span>
+                </li>
+                <li>
+                    <strong>Formação Full Stack</strong>
+                    <span class="muted">Digital College | conclusão prevista: jun/2026</span>
+                </li>
             </ul>
         </section>
     </aside>
@@ -516,35 +631,60 @@
         <section class="section">
             <h2 class="section-title">Objetivo Profissional</h2>
             <p class="paragraph">
-                Busco oportunidade de estágio na área de tecnologia, com foco em desenvolvimento de software e evolução como desenvolvedora full stack. Tenho interesse em aplicar meus conhecimentos em projetos reais, contribuir com equipes técnicas e continuar desenvolvendo habilidades em front-end, back-end e banco de dados.
+                Busco oportunidade de estágio na área de tecnologia, com foco em desenvolvimento
+                de software e evolução como desenvolvedora full stack. Tenho interesse em aplicar
+                meus conhecimentos em projetos reais, contribuir com equipes técnicas e continuar
+                desenvolvendo habilidades em front-end, back-end e banco de dados.
             </p>
         </section>
 
         <section class="section">
             <h2 class="section-title">Resumo do Perfil</h2>
             <p class="paragraph">
-                Estudante de Ciência da Computação na UNIFOR, atualmente no 2º semestre, com formação anterior em Sistemas de Informação pela UNI7 até o 4º semestre. Tenho base em desenvolvimento web, lógica de programação, banco de dados e criação de interfaces, com interesse em construir soluções digitais completas.
+                Estudante de Ciência da Computação na UNIFOR, atualmente no 2º semestre, com
+                formação anterior em Sistemas de Informação pela UNI7 até o 4º semestre. Tenho
+                base em desenvolvimento web, lógica de programação, banco de dados e criação de
+                interfaces, com interesse em construir soluções digitais completas.
             </p>
             <p class="paragraph">
-                Atuo como Líder Estudantil AWS Builder Center, criando conteúdos e promovendo o conhecimento em computação em nuvem no ambiente universitário. Também possuo experiência administrativa em ambiente hospitalar, com atuação em organização de dados, planilhas, marcação de cirurgias, atendimento ao paciente e apoio a processos internos.
+                Atuo como Líder Estudantil AWS Builder Center, criando conteúdos e promovendo o
+                conhecimento em computação em nuvem no ambiente universitário. Também possuo
+                experiência administrativa em ambiente hospitalar, com atuação em organização de
+                dados, planilhas, marcação de cirurgias, atendimento ao paciente e apoio a processos
+                internos.
             </p>
         </section>
 
         <section class="section">
             <h2 class="section-title">Habilidades Técnicas</h2>
             <div class="tech-grid">
-                <div class="tech-row"><strong>Front-end:</strong> HTML, CSS, JavaScript, React; noções de Vue.js e Tailwind CSS</div>
-                <div class="tech-row"><strong>Back-end:</strong> Node.js, Express; noções de PHP/Laravel</div>
-                <div class="tech-row"><strong>Banco de Dados:</strong> PostgreSQL, SQL</div>
-                <div class="tech-row"><strong>Versionamento:</strong> Git, GitHub</div>
-                <div class="tech-row"><strong>Testes:</strong> Testes unitários com Jest básico</div>
-                <div class="tech-row"><strong>Design e Produto:</strong> Figma, UX/UI</div>
-                <div class="tech-row"><strong>Outros:</strong> Consumo de APIs, manipulação do DOM, Computação em Nuvem (AWS)</div>
+                <div class="tech-row">
+                    <strong>Front-end:</strong> HTML, CSS, JavaScript, React; noções de Vue.js e Tailwind CSS
+                </div>
+                <div class="tech-row">
+                    <strong>Back-end:</strong> Node.js, Express; noções de PHP/Laravel
+                </div>
+                <div class="tech-row">
+                    <strong>Banco de Dados:</strong> PostgreSQL, SQL
+                </div>
+                <div class="tech-row">
+                    <strong>Versionamento:</strong> Git, GitHub
+                </div>
+                <div class="tech-row">
+                    <strong>Testes:</strong> Testes unitários com Jest básico
+                </div>
+                <div class="tech-row">
+                    <strong>Design e Produto:</strong> Figma, UX/UI
+                </div>
+                <div class="tech-row">
+                    <strong>Outros:</strong> Consumo de APIs, manipulação do DOM, Computação em Nuvem (AWS)
+                </div>
             </div>
         </section>
 
         <section class="section">
             <h2 class="section-title">Experiências Relevantes</h2>
+
             <div class="timeline">
                 <article class="item">
                     <h3 class="item-title">AWS Builder Student Leader — Effect Sport</h3>
@@ -559,7 +699,9 @@
                 </article>
 
                 <article class="item">
-                    <h3 class="item-title">Auxiliar Administrativa (Jovem Aprendiz) — Hospital Oto Meireles | Kora Saúde</h3>
+                    <h3 class="item-title">
+                        Auxiliar Administrativa (Jovem Aprendiz) — Hospital Oto Meireles | Kora Saúde
+                    </h3>
                     <span class="item-meta">Dez/2023 - Mai/2024 | Fortaleza - CE</span>
                     <ul>
                         <li>Organização e controle de planilhas e dados administrativos.</li>
@@ -569,9 +711,21 @@
                     </ul>
                 </article>
 
+                <article class="item">
+                    <h3 class="item-title">Atendente — Alexaflores</h3>
+                    <span class="item-meta">Experiência temporária | 1 mês | Fortaleza - CE</span>
+                    <ul>
+                        <li>Atendimento direto ao cliente.</li>
+                        <li>Organização de produtos e ambiente de trabalho.</li>
+                        <li>Apoio às demandas da loja e comunicação com o público.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
         <section class="section">
             <h2 class="section-title">Projetos e Atividades em Tecnologia</h2>
+
             <div class="timeline">
                 <article class="item">
                     <h3 class="item-title">AWS Builder Student Leader 2026</h3>
@@ -597,7 +751,10 @@
 
                 <article class="item">
                     <h3 class="item-title">Projetos Acadêmicos e Pessoais</h3>
-                    <span class="item-meta">GitHub: <a href="https://github.com/NiccMaia" target="_blank">github.com/NiccMaia</a></span>
+                    <span class="item-meta">
+              GitHub:
+              <a href="https://github.com/NiccMaia" target="_blank">github.com/NiccMaia</a>
+            </span>
                     <ul>
                         <li>Desenvolvimento de aplicações web com HTML, CSS, JavaScript e React.</li>
                         <li>Criação de funcionalidades CRUD para cadastro, listagem, edição e exclusão de dados.</li>
