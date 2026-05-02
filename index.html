@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Vitae | Nicolle Maia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <style>
+        :root {
+            --lilac: #c1badb;
+            --lavender: #d2c0df;
+            --cream: #fef2c7;
+            --soft-lilac: #ddd4e1;
+            --pink: #f1c0d3;
+            --ink: #2f2935;
+            --muted: #6f6578;
+            --dark-lilac: #7f69a8;
+            --line: rgba(47, 41, 53, 0.14);
+            --paper: #fffdf8;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                    radial-gradient(circle at top left, rgba(241, 192, 211, 0.45), transparent 34%),
+                    radial-gradient(circle at bottom right, rgba(193, 186, 219, 0.55), transparent 35%),
+                    linear-gradient(135deg, #fffafc 0%, #fff8e0 45%, #f8f2fb 100%);
+            color: var(--ink);
+            font-family: "Inter", Arial, sans-serif;
+            line-height: 1.55;
+            padding: 36px 18px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--dark-lilac);
+        }
+
+        .cv-page {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(221, 212, 225, 0.9);
+            border-radius: 34px;
+            box-shadow: 0 22px 70px rgba(126, 104, 165, 0.23);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 330px 1fr;
+            position: relative;
+        }
+
+        .cv-page::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border: 1px solid rgba(193, 186, 219, 0.55);
+            border-radius: 24px;
+            pointer-events: none;
+        }
+
+        .sidebar {
+            background:
+                    linear-gradient(180deg, rgba(210, 192, 223, 0.95), rgba(241, 192, 211, 0.88)),
+                    var(--lavender);
+            padding: 46px 34px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sidebar::after {
+            content: "✦";
+            position: absolute;
+            bottom: 24px;
+            right: 28px;
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .profile-card {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background:
+                    linear-gradient(135deg, rgba(254, 242, 199, 0.95), rgba(255, 255, 255, 0.7)),
+                    var(--cream);
+            border: 8px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 26px rgba(47, 41, 53, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Playfair Display", serif;
+            font-size: 3.4rem;
+            color: var(--dark-lilac);
+            letter-spacing: -0.08em;
+        }
+
+        .name {
+            font-size: 1.85rem;
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .role {
+            font-size: 0.86rem;
+            color: rgba(47, 41, 53, 0.78);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+        }
+
+        .mini-about {
+            background: rgba(255, 255, 255, 0.42);
+            border: 1px solid rgba(255, 255, 255, 0.56);
+            border-radius: 20px;
+            padding: 16px;
+            margin-top: 20px;
+            font-size: 0.92rem;
+            color: rgba(47, 41, 53, 0.82);
+        }
+
+        .side-section {
+            margin-top: 30px;
+        }
+
+        .side-title {
+            font-size: 0.86rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .side-title::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: rgba(47, 41, 53, 0.22);
+        }
+
+        .contact-list,
+        .language-list,
+        .education-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            word-break: break-word;
+        }
+
+        .contact-list i {
+            width: 17px;
+            margin-top: 4px;
+            color: var(--dark-lilac);
+        }
+
+        .language-list li,
+        .education-list li {
+            margin-bottom: 12px;
+            font-size: 0.92rem;
+        }
+
+        .language-list strong,
+        .education-list strong {
+            display: block;
+            font-weight: 800;
+        }
+
+        .muted {
+            color: rgba(47, 41, 53, 0.7);
+            font-size: 0.86rem;
+        }
+
+        .skill-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-pill {
+            background: rgba(255, 255, 255, 0.58);
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: rgba(47, 41, 53, 0.84);
+        }
+
+        .main-content {
+            padding: 48px 52px 52px;
+            position: relative;
+            z-index: 1;
+            background:
+                    linear-gradient(90deg, rgba(255,255,255,0.74), rgba(255,255,255,0.92)),
+                    var(--paper);
+        }
+
+        .top-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 8px 14px;
+            background: rgba(254, 242, 199, 0.45);
+            color: var(--muted);
+            font-size: 0.83rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 26px;
+        }
+
+        .top-label::before {
+            content: "✧";
+            color: var(--dark-lilac);
+            font-size: 1rem;
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            color: var(--dark-lilac);
+            font-size: 1.08rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: var(--line);
+        }
+
+        .paragraph {
+            color: var(--ink);
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            bottom: 6px;
+            width: 2px;
+            background: linear-gradient(var(--pink), var(--lilac));
+            border-radius: 20px;
+        }
+
+        .item {
+            position: relative;
+            padding-bottom: 22px;
+        }
+
+        .item:last-child {
+            padding-bottom: 0;
+        }
+
+        .item::before {
+            content: "";
+            position: absolute;
+            left: -23px;
+            top: 7px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--pink);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 1px var(--soft-lilac);
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--ink);
+            margin-bottom: 3px;
+        }
+
+        .item-meta {
+            display: block;
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .item ul {
+            margin-left: 18px;
+            color: var(--ink);
+        }
+
+        .item li {
+            margin-bottom: 6px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 18px;
+        }
+
+        .tech-row {
+            background: rgba(221, 212, 225, 0.28);
+            border: 1px solid rgba(221, 212, 225, 0.7);
+            border-radius: 16px;
+            padding: 12px 14px;
+            font-size: 0.92rem;
+        }
+
+        .tech-row strong {
+            color: var(--dark-lilac);
+        }
+
+        .print-button {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            background: var(--dark-lilac);
+            color: var(--white);
+            cursor: pointer;
+            box-shadow: 0 10px 26px rgba(47, 41, 53, 0.22);
+            z-index: 99;
+        }
+
+        .print-button:hover {
+            background: var(--ink);
+        }
+
+        @media (max-width: 900px) {
+            body {
+                padding: 16px;
+            }
+
+            .cv-page {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar,
+            .main-content {
+                padding: 32px 24px;
+            }
+
+            .cv-page::before {
+                display: none;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+
+            .cv-page {
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                grid-template-columns: 300px 1fr;
+            }
+
+            .cv-page::before,
+            .print-button {
+                display: none;
+            }
+
+            .sidebar {
+                background: #eee7f2 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .main-content {
+                background: #ffffff !important;
+            }
+
+            a {
+                color: var(--ink);
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<main class="cv-page">
+    <aside class="sidebar">
+        <section class="profile-card">
+            <div class="avatar">
+                <img src="minha-foto.jpg" alt="Foto de Nicolle Maia" />
+            </div>
+            <h1 class="name">Nicolle<br />Luisa Maia</h1>
+            <p class="role">Full Stack em formação</p>
+            <p class="mini-about">
+                Estudante de Ciência da Computação com interesse em desenvolvimento full stack, criação de soluções digitais e tecnologia aplicada a produto.
+            </p>
+        </section>
+
+        <section class="side-section">
+            <h2 class="side-title">Contato</h2>
+            <ul class="contact-list">
+                <li><i class="fas fa-envelope"></i><a href="mailto:nicolleluisamaiagurgel@gmail.com">nicolleluisamaiagurgel@gmail.com</a></li>
+                <li><i class="fab fa-github"></i><a href="https://github.com/NiccMaia" target="_blank">github.com/NiccMaia</a></li>
+                <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/nicolle-maia" target="_blank">linkedin.com/in/nicolle-maia</a></li>
+                <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/5585992925040" target="_blank">+55 (85) 99292-5040</a></li>
+                <li><i class="fas fa-map-marker-alt"></i><span>Fortaleza, Ceará, Brasil</span></li>
+            </ul>
+        </section>
+
+        <section class="side-section">
+            <h2 class="side-title">Tecnologias</h2>
+            <div class="skill-cloud">
+                <span class="skill-pill">HTML</span>
+                <span class="skill-pill">CSS</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Vue.js</span>
+                <span class="skill-pill">Tailwind</span>
+                <span class="skill-pill">Node.js</span>
+                <span class="skill-pill">Express</span>
+                <span class="skill-pill">PostgreSQL</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">Git</span>
+                <span class="skill-pill">GitHub</span>
+                <span class="skill-pill">Figma</span>
+                <span class="skill-pill">AWS</span>
+            </div>
+        </section>
+
+        <section class="side-section">
+            <h2 class="side-title">Idiomas</h2>
+            <ul class="language-list">
+                <li><strong>Português</strong><span class="muted">Nativo</span></li>
+                <li><strong>Espanhol</strong><span class="muted">Intermediário</span></li>
+                <li><strong>Inglês</strong><span class="muted">Iniciante</span></li>
+            </ul>
+        </section>
+
+        <section class="side-section">
+            <h2 class="side-title">Educação</h2>
+            <ul class="education-list">
+                <li><strong>Ciência da Computação</strong><span class="muted">UNIFOR | 2º semestre</span></li>
+                <li><strong>Sistemas de Informação</strong><span class="muted">UNI7 | até o 4º semestre</span></li>
+                <li><strong>Formação Full Stack</strong><span class="muted">Digital College | conclusão prevista: jun/2026</span></li>
+            </ul>
+        </section>
+    </aside>
+
+    <section class="main-content">
+        <div class="top-label">Curriculum Vitae</div>
+
+        <section class="section">
+            <h2 class="section-title">Objetivo Profissional</h2>
+            <p class="paragraph">
+                Busco oportunidade de estágio na área de tecnologia, com foco em desenvolvimento de software e evolução como desenvolvedora full stack. Tenho interesse em aplicar meus conhecimentos em projetos reais, contribuir com equipes técnicas e continuar desenvolvendo habilidades em front-end, back-end e banco de dados.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Resumo do Perfil</h2>
+            <p class="paragraph">
+                Estudante de Ciência da Computação na UNIFOR, atualmente no 2º semestre, com formação anterior em Sistemas de Informação pela UNI7 até o 4º semestre. Tenho base em desenvolvimento web, lógica de programação, banco de dados e criação de interfaces, com interesse em construir soluções digitais completas.
+            </p>
+            <p class="paragraph">
+                Atuo como Líder Estudantil AWS Builder Center, criando conteúdos e promovendo o conhecimento em computação em nuvem no ambiente universitário. Também possuo experiência administrativa em ambiente hospitalar, com atuação em organização de dados, planilhas, marcação de cirurgias, atendimento ao paciente e apoio a processos internos.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="tech-grid">
+                <div class="tech-row"><strong>Front-end:</strong> HTML, CSS, JavaScript, React; noções de Vue.js e Tailwind CSS</div>
+                <div class="tech-row"><strong>Back-end:</strong> Node.js, Express; noções de PHP/Laravel</div>
+                <div class="tech-row"><strong>Banco de Dados:</strong> PostgreSQL, SQL</div>
+                <div class="tech-row"><strong>Versionamento:</strong> Git, GitHub</div>
+                <div class="tech-row"><strong>Testes:</strong> Testes unitários com Jest básico</div>
+                <div class="tech-row"><strong>Design e Produto:</strong> Figma, UX/UI</div>
+                <div class="tech-row"><strong>Outros:</strong> Consumo de APIs, manipulação do DOM, Computação em Nuvem (AWS)</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Experiências Relevantes</h2>
+            <div class="timeline">
+                <article class="item">
+                    <h3 class="item-title">AWS Builder Student Leader — Effect Sport</h3>
+                    <span class="item-meta">Contrato temporário | Projeto AWS Builder Student | 2026</span>
+                    <ul>
+                        <li>Criação de conteúdos educativos sobre AWS, cloud computing e tecnologia.</li>
+                        <li>Produção de artigos e posts voltados para estudantes iniciantes em tecnologia.</li>
+                        <li>Divulgação de conhecimentos sobre computação em nuvem no ambiente universitário.</li>
+                        <li>Engajamento de estudantes por meio de ações presenciais e digitais.</li>
+                        <li>Desenvolvimento de comunicação técnica, escrita e presença digital na área de tecnologia.</li>
+                    </ul>
+                </article>
+
+                <article class="item">
+                    <h3 class="item-title">Auxiliar Administrativa (Jovem Aprendiz) — Hospital Oto Meireles | Kora Saúde</h3>
+                    <span class="item-meta">Dez/2023 - Mai/2024 | Fortaleza - CE</span>
+                    <ul>
+                        <li>Organização e controle de planilhas e dados administrativos.</li>
+                        <li>Apoio na marcação de cirurgias e organização de processos internos.</li>
+                        <li>Atendimento ao paciente e suporte às rotinas administrativas do hospital.</li>
+                        <li>Desenvolvimento de organização, responsabilidade e comunicação profissional.</li>
+                    </ul>
+                </article>
+
+
+        <section class="section">
+            <h2 class="section-title">Projetos e Atividades em Tecnologia</h2>
+            <div class="timeline">
+                <article class="item">
+                    <h3 class="item-title">AWS Builder Student Leader 2026</h3>
+                    <span class="item-meta">Projeto de liderança estudantil em tecnologia | 2026</span>
+                    <ul>
+                        <li>Criação de conteúdos educativos sobre AWS, cloud computing e tecnologia.</li>
+                        <li>Produção de artigos e posts voltados para estudantes iniciantes em tecnologia.</li>
+                        <li>Divulgação de conhecimentos sobre computação em nuvem no ambiente universitário.</li>
+                        <li>Engajamento de estudantes por meio de ações presenciais e digitais.</li>
+                    </ul>
+                </article>
+
+                <article class="item">
+                    <h3 class="item-title">Lumen — Projeto de Produto Digital</h3>
+                    <span class="item-meta">Apple Developer Academy | Processo Seletivo</span>
+                    <ul>
+                        <li>Desenvolvimento de proposta de aplicativo para organização de estudos utilizando a metodologia Big Idea.</li>
+                        <li>Pesquisa com usuários para compreender dificuldades na organização acadêmica.</li>
+                        <li>Definição de funcionalidades como tarefas, calendário, prioridades e personalização.</li>
+                        <li>Prototipação desktop e mobile com foco em UX/UI e experiência do usuário.</li>
+                    </ul>
+                </article>
+
+                <article class="item">
+                    <h3 class="item-title">Projetos Acadêmicos e Pessoais</h3>
+                    <span class="item-meta">GitHub: <a href="https://github.com/NiccMaia" target="_blank">github.com/NiccMaia</a></span>
+                    <ul>
+                        <li>Desenvolvimento de aplicações web com HTML, CSS, JavaScript e React.</li>
+                        <li>Criação de funcionalidades CRUD para cadastro, listagem, edição e exclusão de dados.</li>
+                        <li>Consumo de APIs e manipulação do DOM.</li>
+                        <li>Estruturação de projetos front-end e back-end com foco em organização e boas práticas.</li>
+                        <li>Versionamento de código com Git e GitHub.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </section>
+</main>
+
+<button class="print-button" title="Imprimir" onclick="window.print()">
+    <i class="fas fa-print"></i>
+</button>
+</body>
+</html>
